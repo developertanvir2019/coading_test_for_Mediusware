@@ -38,6 +38,7 @@ const Problem2 = () => {
           setShow={setShowAllContact}
         />
         <UsContactModal
+          handleShowAllContact={handleShowAllContact}
           handleShowUsContact={handleShowUsContact}
           show={showUsContact}
           setShow={setShowUsContact}

@@ -56,7 +56,7 @@ const AllContactModal = ({
         </Modal.Header>
         <Modal.Body>
           <>
-            <div class="input-group">
+            <div class="input-group mb-2">
               <div class="form-outline">
                 <input
                   type="search"
@@ -78,13 +78,17 @@ const AllContactModal = ({
                 </tr>
               </thead>
               <tbody>
-                {allContact?.map((contact) => (
-                  <tr key={contact?.id}>
-                    <td>{contact?.id}</td>
-                    <td>{contact?.phone}</td>
-                    <td>{contact?.country?.name}</td>
-                  </tr>
-                ))}
+                {allContact.length ? (
+                  allContact?.map((contact) => (
+                    <tr key={contact?.id}>
+                      <td>{contact?.id}</td>
+                      <td>{contact?.phone}</td>
+                      <td>{contact?.country?.name}</td>
+                    </tr>
+                  ))
+                ) : (
+                  <h3 className="m-5">No data found</h3>
+                )}
               </tbody>
             </Table>
           </>
